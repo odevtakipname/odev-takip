@@ -35,7 +35,7 @@
         <div class="animate form login_form">
           <section class="login_content">
             <form action="{{url('/login')}}" method="POST">
-              {{ csrf_field() }}
+              <input type="hidden" name="_token" value="{{ csrf_token() }}">
               <h1>Giriş Ekranı</h1>
 
                   @if ($errors->any())
