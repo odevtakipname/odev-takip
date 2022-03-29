@@ -31,7 +31,7 @@
         <div class="animate form login_form">
           <section class="login_content">
             <form action="{{url('/login')}}" method="POST">
-                @csrf
+{{ csrf_token() }}
               <h1>Giriş Ekranı</h1>
 
                   @if ($errors->any())
