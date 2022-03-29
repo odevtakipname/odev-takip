@@ -8,7 +8,7 @@ use App\Http\Controllers\ProjeController;
 use App\Http\Controllers\TakipController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Artisan;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +19,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/generate', function(){
+    Artisan::call('key:generate');
+    return "hehehehe";
+});
+Route::get('/confifg', function(){
+    Artisan::call('config:cache');
+    return "config hehehe ";
+});
 Route::get('/new-admin',[UsersController::class,'newAdmin']);
 
 Route::prefix('/')->middleware('isLogin')->group(function(){
