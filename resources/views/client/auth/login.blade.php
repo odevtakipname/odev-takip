@@ -20,6 +20,10 @@
 
     <!-- Custom Theme Style -->
     <link href="{{asset('build/css/custom.min.css')}}" rel="stylesheet">
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+
   </head>
 
   <body class="login">
