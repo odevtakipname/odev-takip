@@ -11,7 +11,7 @@ class LoginController extends Controller
     public function login(Request $request){
         //Log::info($request->post());
         if (Auth::attempt(['eposta'=>$request->email,'password'=>$request->password])) {
-            dd(auth()->user());
+            return redirect('/')->withErrors(dd(auth()->user()) );
         }
         return redirect('/')->withErrors('Email veya şifre hatalı !');
     }
