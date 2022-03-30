@@ -33,7 +33,7 @@
                                     </div>
                                     <h4 class="text-center mb-4 text-white">Giriş Paneli</h4>
                                     <form action="{{ url('/login') }}" method="POST">
-                                        @csrf
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}" />
 
                                         @if ($errors->any())
                                             <div class="alert alert-danger">
