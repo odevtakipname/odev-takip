@@ -7844,6 +7844,226 @@
     //
     //
     //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
     
     /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
       data: function data() {
@@ -7912,6 +8132,13 @@
         fileUpload: function fileUpload(e, name) {
           this.$set(this.form, name, e.target.files[0]);
         },
+        ekle: function ekle() {
+          if (this.oneri) {
+            this.oneri = false;
+          } else {
+            this.oneri = true;
+          }
+        },
         edit: function edit(index) {
           if (this.oneri) {
             this.oneri = false;
@@ -7924,7 +8151,7 @@
         },
         edit2: function edit2(index) {
           if (this.durum == "Devam Eden Proje") {
-            this.messageAlert("Başarısız", "Proje Henüz Rapor aşamasını geçemediği için bu kısım aktif değil", 'error');
+            this.messageAlert("Başarısız", "Proje Henüz Rapor aşamasını geçemediği için bu kısım aktif değil", "error");
           } else {
             this.form = this.o_forms[index];
             this.editis = false;
@@ -7938,7 +8165,7 @@
         },
         edit3: function edit3(index) {
           if (this.durum == "Devam Eden Proje" || this.durum.includes("Rapor")) {
-            this.messageAlert("Başarısız", "Proje Henüz Tez aşamasını geçemediği için bu kısım aktif değil", 'error');
+            this.messageAlert("Başarısız", "Proje Henüz Tez aşamasını geçemediği için bu kısım aktif değil", "error");
           } else {
             this.form = this.o_forms[index];
             this.editis = false;
@@ -7989,11 +8216,11 @@
           }
     
           axios.post("/takip/proje-rapor-add", formData).then(function (response) {
-            _this3.messageAlert("Başarılı", "İşlem Başarılı Proje Danışman Onayına Gönderildi.", 'success');
+            _this3.messageAlert("Başarılı", "İşlem Başarılı Proje Danışman Onayına Gönderildi.", "success");
     
             _this3.load();
           })["catch"](function (err) {
-            _this3.messageAlert("Başarısız", "İşlem Başarısız", 'error');
+            _this3.messageAlert("Başarısız", "İşlem Başarısız", "error");
     
             console.log(err);
           });
@@ -8017,11 +8244,11 @@
           }
     
           axios.post("/takip/proje-tez-add", formData).then(function (response) {
-            _this4.messageAlert("Başarılı", "İşlem Başarılı Proje Danışman Onayına Gönderildi.", 'success');
+            _this4.messageAlert("Başarılı", "İşlem Başarılı Proje Danışman Onayına Gönderildi.", "success");
     
             _this4.load();
           })["catch"](function (err) {
-            _this4.messageAlert("Başarısız", "İşlem Başarısız", 'error');
+            _this4.messageAlert("Başarısız", "İşlem Başarısız", "error");
     
             console.log(err);
           });
@@ -36664,7 +36891,7 @@
                       },
                       [
                         _c("label", [
-                          _vm._v("\r\n                                Ara :"),
+                          _vm._v("\n                                Ara :"),
                           _c("input", {
                             directives: [
                               {
@@ -36693,7 +36920,7 @@
                           {
                             on: {
                               click: function ($event) {
-                                return _vm.edit(1)
+                                return _vm.ekle()
                               },
                             },
                           },
@@ -36837,9 +37064,9 @@
                                 _vm._v(" "),
                                 _c("td", [
                                   _vm._v(
-                                    "\r\n                                        " +
+                                    "\n                                        " +
                                       _vm._s(item.seen ? item.seen : "Görülmedi") +
-                                      "\r\n                                    "
+                                      "\n                                    "
                                   ),
                                 ]),
                               ]
@@ -36980,7 +37207,7 @@
                               },
                               [
                                 _vm._v(
-                                  "Projenin amacını, önemini ve kapsamını\r\n                                    açıklayınız\r\n                                "
+                                  "Projenin amacını, önemini ve kapsamını\n                                    açıklayınız\n                                "
                                 ),
                               ]
                             ),
@@ -37027,7 +37254,7 @@
                               },
                               [
                                 _vm._v(
-                                  "Materyal, yöntem ve araştırma\r\n                                    olanaklarını açıklayınız\r\n                                "
+                                  "Materyal, yöntem ve araştırma\n                                    olanaklarını açıklayınız\n                                "
                                 ),
                               ]
                             ),
@@ -37188,7 +37415,7 @@
                         },
                       },
                     },
-                    [_vm._v("\r\n                    Kaydet\r\n                ")]
+                    [_vm._v("\n                    Kaydet\n                ")]
                   ),
                   _vm._v(" "),
                   _c(
@@ -37197,7 +37424,7 @@
                       staticClass: "btn btn-primary",
                       attrs: { type: "button", disabled: "" },
                     },
-                    [_vm._v("\r\n                    Kaydet\r\n                ")]
+                    [_vm._v("\n                    Kaydet\n                ")]
                   ),
                 ]),
               ]),
@@ -37281,7 +37508,7 @@
                       _vm._v(" "),
                       _vm.form.rapor_pdf
                         ? _c("div", { staticClass: "col-md-6 pt-5 pb-5" }, [
-                            _c("div", { staticClass: "col-md-12 " }, [
+                            _c("div", { staticClass: "col-md-12" }, [
                               _c(
                                 "a",
                                 {
@@ -37296,7 +37523,7 @@
                                 [
                                   _c("strong"),
                                   _vm._v(
-                                    "Yüklenen Raporu\r\n                                    İndirmek İçin\r\n                                "
+                                    "Yüklenen Raporu İndirmek\n                                İçin\n                            "
                                   ),
                                 ]
                               ),
@@ -37317,7 +37544,7 @@
                                 [
                                   _c("strong"),
                                   _vm._v(
-                                    "Yüklenen Raporu\r\n                                    İndirmek İçin\r\n                                "
+                                    "Yüklenen Raporu İndirmek\n                                İçin\n                            "
                                   ),
                                 ]
                               ),
@@ -37338,7 +37565,7 @@
                                 [
                                   _c("strong"),
                                   _vm._v(
-                                    "Yüklenen Raporu\r\n                                    İndirmek İçin\r\n                                "
+                                    "Yüklenen Raporu İndirmek\n                                İçin\n                            "
                                   ),
                                 ]
                               ),
@@ -37395,11 +37622,7 @@
                         },
                       },
                     },
-                    [
-                      _vm._v(
-                        "\r\n                        Kaydet\r\n                    "
-                      ),
-                    ]
+                    [_vm._v("\n                    Kaydet\n                ")]
                   ),
                 ]),
               ]),
@@ -37499,7 +37722,7 @@
                                   _vm._v(" "),
                                   _c("strong", [_vm._v("Docs")]),
                                   _vm._v(
-                                    "Yüklenen Raporu\r\n                                    İndirmek İçin\r\n                                "
+                                    "Yüklenen Raporu\n                                İndirmek İçin\n                            "
                                   ),
                                 ]
                               ),
@@ -37522,7 +37745,7 @@
                                   _vm._v(" "),
                                   _c("strong", [_vm._v("Docs")]),
                                   _vm._v(
-                                    "Yüklenen Raporu\r\n                                    İndirmek İçin\r\n                                "
+                                    "Yüklenen Raporu\n                                İndirmek İçin\n                            "
                                   ),
                                 ]
                               ),
@@ -37545,7 +37768,7 @@
                                   _vm._v(" "),
                                   _c("strong", [_vm._v("Docs")]),
                                   _vm._v(
-                                    "Yüklenen Raporu\r\n                                    İndirmek İçin\r\n                                "
+                                    "Yüklenen Raporu\n                                İndirmek İçin\n                            "
                                   ),
                                 ]
                               ),
@@ -37602,11 +37825,7 @@
                         },
                       },
                     },
-                    [
-                      _vm._v(
-                        "\r\n                        Kaydet\r\n                    "
-                      ),
-                    ]
+                    [_vm._v("\n                    Kaydet\n                ")]
                   ),
                 ]),
               ]),
@@ -37631,7 +37850,7 @@
           _c("tr", [
             _c("th", { staticStyle: { "max-width": "40px !important" } }, [
               _vm._v(
-                "\r\n                                        Öneri\r\n                                    "
+                "\n                                        Öneri\n                                    "
               ),
             ]),
             _vm._v(" "),
@@ -37656,11 +37875,11 @@
         return _c("div", { staticClass: "card-header" }, [
           _c("h4", { staticClass: "card-title" }, [
             _vm._v(
-              "\r\n                    Proje Önerisi Formu\r\n                    "
+              "\n                    Proje Önerisi Formu\n                    "
             ),
             _c("span", { staticClass: "badge badge-xs light badge-primary" }, [
               _vm._v(
-                "Sağ taraftan projenin önizlemesini kontrol\r\n                        edebilirsiniz\r\n                    "
+                "Sağ taraftan projenin önizlemesini kontrol\n                        edebilirsiniz\n                    "
               ),
             ]),
           ]),
@@ -37681,7 +37900,7 @@
         return _c("label", [
           _c("strong", [
             _vm._v(
-              "\r\n                                        Proje Anahtar Kelime\r\n                                    "
+              "\n                                        Proje Anahtar Kelime\n                                    "
             ),
           ]),
         ])
@@ -37693,7 +37912,7 @@
         return _c("label", [
           _c("strong", [
             _vm._v(
-              "\r\n                                        Projenin amacını, önemini ve\r\n                                        Kapsamı"
+              "\n                                        Projenin amacını, önemini ve\n                                        Kapsamı"
             ),
           ]),
         ])
@@ -37705,7 +37924,7 @@
         return _c("label", [
           _c("strong", [
             _vm._v(
-              "\r\n                                        Materyal, yöntem ve araştırma\r\n                                        olanaklarını açıklayınız\r\n                                    "
+              "\n                                        Materyal, yöntem ve araştırma\n                                        olanaklarını açıklayınız\n                                    "
             ),
           ]),
         ])
@@ -37723,11 +37942,7 @@
         var _h = _vm.$createElement
         var _c = _vm._self._c || _h
         return _c("div", { staticClass: "card-header" }, [
-          _c("h4", { staticClass: "card-title" }, [
-            _vm._v(
-              "\r\n                    Rapor Aşaması\r\n           \r\n                "
-            ),
-          ]),
+          _c("h4", { staticClass: "card-title" }, [_vm._v("Rapor Aşaması")]),
         ])
       },
       function () {
@@ -37736,10 +37951,10 @@
         var _c = _vm._self._c || _h
         return _c("div", { staticClass: "card-header" }, [
           _c("h4", { staticClass: "card-title" }, [
-            _vm._v("\r\n                    Tez Aşaması\r\n                    "),
+            _vm._v("\n                    Tez Aşaması\n                    "),
             _c("span", { staticClass: "badge badge-xs light badge-primary" }, [
               _vm._v(
-                "\r\n                        edebilirsiniz\r\n                    "
+                "\n                        edebilirsiniz\n                    "
               ),
             ]),
           ]),
@@ -54259,7 +54474,7 @@
     /******/ 	
     /******/ 	/* webpack/runtime/getFullHash */
     /******/ 	(() => {
-    /******/ 		__webpack_require__.h = () => ("3c397f1fb56f83a8")
+    /******/ 		__webpack_require__.h = () => ("551a59aa6063250c")
     /******/ 	})();
     /******/ 	
     /******/ 	/* webpack/runtime/global */
