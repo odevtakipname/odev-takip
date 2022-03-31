@@ -23,7 +23,7 @@
 
         <!-- All init script -->
         <script src="{{asset('frontend/js/plugins-init/toastr-init.js')}}"></script>
-    <script  src="{{mix('js/app.js')}}"></script>
+    <script  src="{{asset('js/app.js')}}"></script>
 
 </body>
 </html>
