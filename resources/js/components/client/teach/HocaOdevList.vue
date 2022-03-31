@@ -174,7 +174,7 @@ export default {
 
         },
         load() {
-            axios.post("/takip/proje-data").then((response) => {
+            axios.post("/odev/proje-data").then((response) => {
                 this.forms = response.data;
                 this.o_forms = response.data
             });
@@ -196,7 +196,7 @@ export default {
             formData.append('metaryel', this.form.metaryel);
             formData.append('anahtar_kelime', this.form.anahtar_kelime);
 
-            axios.post('/takip/proje-add', formData)
+            axios.post('/odev/proje-add', formData)
                 .then(response => {
 
                     successModal('Başarılı', 'İşlem Başarılı Proje Danışman Onayına Gönderildi.');

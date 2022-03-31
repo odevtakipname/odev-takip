@@ -18,7 +18,7 @@ class isLogin
     public function handle(Request $request, Closure $next)
     {
         if (Auth::check()) {
-            return redirect('takip/');
+            return redirect('odev/');
         } 
 
         return $next($request);

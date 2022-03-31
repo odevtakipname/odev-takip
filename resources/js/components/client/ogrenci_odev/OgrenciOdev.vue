@@ -604,7 +604,7 @@ export default {
         },
         removeT() {},
         load() {
-            axios.post("/takip/proje-data").then((response) => {
+            axios.post("/odev/proje-data").then((response) => {
                 this.forms = response.data;
                 this.durum = response.data[0].durum;
                 this.o_forms = response.data;
@@ -675,7 +675,7 @@ export default {
             formData.append("anahtar_kelime", this.form.anahtar_kelime);
 
             axios
-                .post("/takip/proje-add", formData)
+                .post("/odev/proje-add", formData)
                 .then((response) => {
                     this.messageAlert(
                         "Başarılı",
@@ -721,7 +721,7 @@ export default {
             }
 
             axios
-                .post("/takip/proje-rapor-add", formData)
+                .post("/odev/proje-rapor-add", formData)
                 .then((response) => {
                     this.messageAlert(
                         "Başarılı",
@@ -762,7 +762,7 @@ export default {
             }
 
             axios
-                .post("/takip/proje-tez-add", formData)
+                .post("/odev/proje-tez-add", formData)
                 .then((response) => {
                     this.messageAlert(
                         "Başarılı",

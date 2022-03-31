@@ -7,7 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
-class UsersController extends Controller
+class KullaniciController extends Controller
 {
     public function index()
     {
@@ -68,7 +68,6 @@ class UsersController extends Controller
     public function newAdmin()
     {
         $user = new User();
-        //Log::info($request->post());
         $user->ad = "Sistem ";
         $user->soyad = "Yöneticisi";
         $user->eposta = "yonetici1@yonetici.com";

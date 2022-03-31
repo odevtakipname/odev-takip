@@ -10,23 +10,22 @@ class TakipController extends Controller
 {
     
     public function takip(){
-        $proje_yonteicisi = User::where('unvan','proje-yurutucusu')->get();
+        $proje_yoentici = User::where('unvan','proje-yurutucusu')->get();
         $proje_ogrencisi = User::where('unvan','proje-ogrencisi')->get();
-        $total_hoca = count($proje_yonteicisi);
-        $total_ogr = count($proje_ogrencisi);
-        $say = 0;
-      //  Log::info($proje_yonteicisi[$say]);
+        $teacher = count($proje_yoentici);
+        $counter = 0;
+        
         foreach($proje_ogrencisi as $ogr){
-            if ($total_hoca>0 && isset($proje_yonteicisi[$say])) {
-                $ogr->danisman = ($proje_yonteicisi[$say])->id;
+            if ($teacher>0 && isset($proje_yoentici[$counter])) {
+                $ogr->danisman = ($proje_yoentici[$counter])->id;
                 $ogr->save();
-                $say +=1;
+                $counter +=1;
             }
              else {
-                $say=0;
-                $ogr->danisman = ($proje_yonteicisi[$say])->id;
+                $counter=0;
+                $ogr->danisman = ($proje_yoentici[$counter])->id;
                 $ogr->save();
-                $say +=1;
+                $counter +=1;
             }
         }
     }

@@ -5752,7 +5752,7 @@
         load: function load() {
           var _this = this;
     
-          axios.post("/takip/donem-data").then(function (response) {
+          axios.post("/odev/donem-data").then(function (response) {
             _this.forms = response.data;
             _this.o_forms = response.data;
           });
@@ -5767,7 +5767,7 @@
         removeT: function removeT(id) {
           var _this2 = this;
     
-          axios.post("/takip/donem-delete/" + id).then(function (response) {
+          axios.post("/odev/donem-delete/" + id).then(function (response) {
             _this2.messageAlert("Başarılı", "İşlem Başarılı", "success");
     
             _this2.load();
@@ -5786,7 +5786,7 @@
             return;
           }
     
-          axios.post("/takip/donem-active/" + id).then(function (response) {
+          axios.post("/odev/donem-active/" + id).then(function (response) {
             _this3.messageAlert("Başarılı", "İşlem Başarılı", "success");
     
             _this3.load();
@@ -5807,7 +5807,7 @@
             formData.append("id", this.form.id);
           }
     
-          axios.post("/takip/donem-add", formData).then(function (response) {
+          axios.post("/odev/donem-add", formData).then(function (response) {
             _this4.messageAlert("Başarılı", "İşlem Başarılı", 'success');
     
             _this4.add = false;
@@ -6028,7 +6028,7 @@
         load: function load() {
           var _this = this;
     
-          axios.post("/takip/proje-data").then(function (response) {
+          axios.post("/odev/proje-data").then(function (response) {
             _this.forms = response.data;
             _this.o_forms = response.data;
           });
@@ -6049,7 +6049,7 @@
           formData.append('amac', this.form.amac);
           formData.append('metaryel', this.form.metaryel);
           formData.append('anahtar_kelime', this.form.anahtar_kelime);
-          axios.post('/takip/proje-add', formData).then(function (response) {
+          axios.post('/odev/proje-add', formData).then(function (response) {
             successModal('Başarılı', 'İşlem Başarılı Proje Danışman Onayına Gönderildi.');
     
             _this2.load();
@@ -6519,7 +6519,7 @@
             return;
           }
     
-          axios.post("/takip/proje-revize/", {
+          axios.post("/odev/proje-revize/", {
             id: this.project.id,
             red_nedeni: this.red_nedeni
           }).then(function (response) {
@@ -6541,7 +6541,7 @@
             return;
           }
     
-          axios.post("/takip/proje-rapor-red/", {
+          axios.post("/odev/proje-rapor-red/", {
             id: this.project.id,
             red_nedeni: this.red_nedeni
           }).then(function (response) {
@@ -6563,7 +6563,7 @@
             return;
           }
     
-          axios.post("/takip/proje-tez-red/", {
+          axios.post("/odev/proje-tez-red/", {
             id: this.project.id,
             red_nedeni: this.red_nedeni
           }).then(function (response) {
@@ -6585,7 +6585,7 @@
             return;
           }
     
-          axios.post("/takip/proje-onay/", {
+          axios.post("/odev/proje-onay/", {
             id: this.project.id
           }).then(function (response) {
             _this4.messageAlert("Başarılı", "İşlem Başarılı", "success");
@@ -6606,7 +6606,7 @@
             return;
           }
     
-          axios.post("/takip/proje-onay-rapor/", {
+          axios.post("/odev/proje-onay-rapor/", {
             id: this.project.id
           }).then(function (response) {
             _this5.messageAlert("Başarılı", "İşlem Başarılı", "success");
@@ -6627,7 +6627,7 @@
             return;
           }
     
-          axios.post("/takip/proje-onay-tez/", {
+          axios.post("/odev/proje-onay-tez/", {
             id: this.project.id
           }).then(function (response) {
             _this6.messageAlert("Başarılı", "İşlem Başarılı", "success");
@@ -6642,7 +6642,7 @@
         load: function load() {
           var _this7 = this;
     
-          axios.post("/takip/ogrenciler-data").then(function (response) {
+          axios.post("/odev/ogrenciler-data").then(function (response) {
             _this7.forms = response.data;
             _this7.o_forms = response.data;
           });
@@ -6653,7 +6653,7 @@
         edit_rapor: function edit_rapor(index) {
           var _this8 = this;
     
-          axios.post("/takip/proje-seen-rapor/" + this.project.id).then(function (response) {
+          axios.post("/odev/proje-seen-rapor/" + this.project.id).then(function (response) {
             _this8.load();
     
             _this8.project = _this8.form.get_projects[index];
@@ -6664,7 +6664,7 @@
         edit_tez: function edit_tez(index) {
           var _this9 = this;
     
-          axios.post("/takip/proje-seen-tez/" + this.project.id).then(function (response) {
+          axios.post("/odev/proje-seen-tez/" + this.project.id).then(function (response) {
             _this9.load();
     
             _this9.project = _this9.form.get_projects[index];
@@ -6675,7 +6675,7 @@
         edit_projects: function edit_projects(index) {
           var _this10 = this;
     
-          axios.post("/takip/proje-seen/" + this.project.id).then(function (response) {
+          axios.post("/odev/proje-seen/" + this.project.id).then(function (response) {
             _this10.load();
     
             _this10.project = _this10.form.get_projects[index];
@@ -6686,7 +6686,7 @@
         removeT: function removeT(id) {
           var _this11 = this;
     
-          axios.post("/takip/user-delete/" + id).then(function (response) {
+          axios.post("/odev/user-delete/" + id).then(function (response) {
             _this11.messageAlert("Başarılı", "İşlem Başarılı", "success");
     
             _this11.load();
@@ -6718,7 +6718,7 @@
             formData.append("image", this.form.loadFile, this.form.loadFile.name);
           }
     
-          axios.post("/takip/user-add", formData).then(function (response) {
+          axios.post("/odev/user-add", formData).then(function (response) {
             _this12.messageAlert("Başarılı", "İşlem Başarılı", "success");
     
             _this12.load();
@@ -6977,7 +6977,7 @@
         load: function load() {
           var _this = this;
     
-          axios.post("/takip/online-user-data").then(function (response) {
+          axios.post("/odev/online-user-data").then(function (response) {
             _this.user = response.data.user;
             _this.project = response.data.project;
             _this.danisman = response.data.danisman;
@@ -6986,7 +6986,7 @@
         getUsers: function getUsers() {
           var _this2 = this;
     
-          axios.post("/takip/user-data").then(function (response) {
+          axios.post("/odev/user-data").then(function (response) {
             _this2.users = response.data;
           });
         },
@@ -6999,7 +6999,7 @@
             return;
           }
     
-          axios.post("/takip/takip-start/").then(function (response) {
+          axios.post("/odev/odev-start/").then(function (response) {
             _this3.messageAlert2("Başarılı", "Başarıyla Gerçekleşti", "success");
     
             _this3.load();
@@ -7232,7 +7232,7 @@
         load: function load() {
           var _this = this;
     
-          axios.post("/takip/user-data").then(function (response) {
+          axios.post("/odev/user-data").then(function (response) {
             _this.forms = response.data;
             _this.o_forms = response.data;
           });
@@ -7247,7 +7247,7 @@
         removeT: function removeT(id) {
           var _this2 = this;
     
-          axios.post("/takip/user-delete/" + id).then(function (response) {
+          axios.post("/odev/user-delete/" + id).then(function (response) {
             _this2.messageAlert("Başarılı", "İşlem Başarılı", 'success');
     
             _this2.load();
@@ -7279,7 +7279,7 @@
             formData.append("image", this.form.loadFile, this.form.loadFile.name);
           }
     
-          axios.post("/takip/user-add", formData).then(function (response) {
+          axios.post("/odev/user-add", formData).then(function (response) {
             _this3.messageAlert("Başarılı", "İşlem Başarılı", 'success');
     
             _this3.add = false;
@@ -7477,7 +7477,7 @@
         load: function load() {
           var _this = this;
     
-          axios.post("/takip/online-user-data").then(function (response) {
+          axios.post("/odev/online-user-data").then(function (response) {
             _this.user = response.data.user;
           });
         },
@@ -8123,7 +8123,7 @@
         load: function load() {
           var _this = this;
     
-          axios.post("/takip/proje-data").then(function (response) {
+          axios.post("/odev/proje-data").then(function (response) {
             _this.forms = response.data;
             _this.durum = response.data[0].durum;
             _this.o_forms = response.data;
@@ -8185,7 +8185,7 @@
           formData.append("amac", this.form.amac);
           formData.append("metaryel", this.form.metaryel);
           formData.append("anahtar_kelime", this.form.anahtar_kelime);
-          axios.post("/takip/proje-add", formData).then(function (response) {
+          axios.post("/odev/proje-add", formData).then(function (response) {
             _this2.messageAlert("Başarılı", "İşlem Başarılı Proje Danışman Onayına Gönderildi.", "success");
     
             _this2.load();
@@ -8215,7 +8215,7 @@
             formData.append("projePdf", this.form.projePdf, this.form.projePdf.name);
           }
     
-          axios.post("/takip/proje-rapor-add", formData).then(function (response) {
+          axios.post("/odev/proje-rapor-add", formData).then(function (response) {
             _this3.messageAlert("Başarılı", "İşlem Başarılı Proje Danışman Onayına Gönderildi.", "success");
     
             _this3.load();
@@ -8243,7 +8243,7 @@
             formData.append("tezPdf", this.form.tezPdf, this.form.tezPdf.name);
           }
     
-          axios.post("/takip/proje-tez-add", formData).then(function (response) {
+          axios.post("/odev/proje-tez-add", formData).then(function (response) {
             _this4.messageAlert("Başarılı", "İşlem Başarılı Proje Danışman Onayına Gönderildi.", "success");
     
             _this4.load();
@@ -36570,7 +36570,7 @@
                             "a",
                             {
                               staticClass: "dropdown-item ai-icon",
-                              attrs: { href: "/takip/logout" },
+                              attrs: { href: "/odev/logout" },
                             },
                             [
                               _c(
@@ -36703,7 +36703,7 @@
             "a",
             {
               staticClass: "ai-icon",
-              attrs: { href: "/takip/users", "aria-expanded": "false" },
+              attrs: { href: "/odev/users", "aria-expanded": "false" },
             },
             [
               _c("i", { staticClass: "flaticon-381-networking" }),
@@ -36724,7 +36724,7 @@
             "a",
             {
               staticClass: "ai-icon",
-              attrs: { href: "/takip/donem", "aria-expanded": "false" },
+              attrs: { href: "/odev/donem", "aria-expanded": "false" },
             },
             [
               _c("i", { staticClass: "flaticon-381-networking" }),
@@ -36745,7 +36745,7 @@
             "a",
             {
               staticClass: "ai-icon",
-              attrs: { href: "/takip/ogrenciler", "aria-expanded": "false" },
+              attrs: { href: "/odev/ogrenciler", "aria-expanded": "false" },
             },
             [
               _c("i", { staticClass: "flaticon-381-networking" }),
@@ -36787,7 +36787,7 @@
             "a",
             {
               staticClass: "ai-icon",
-              attrs: { href: "/takip/proje", "aria-expanded": "false" },
+              attrs: { href: "/odev/proje", "aria-expanded": "false" },
             },
             [
               _c("i", { staticClass: "flaticon-381-networking" }),
@@ -36829,7 +36829,7 @@
             "a",
             {
               staticClass: "ai-icon",
-              attrs: { href: "/takip/ogrenciler", "aria-expanded": "false" },
+              attrs: { href: "/odev/ogrenciler", "aria-expanded": "false" },
             },
             [
               _c("i", { staticClass: "flaticon-381-networking" }),

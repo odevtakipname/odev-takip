@@ -1,12 +1,12 @@
 <?php
 
 use App\Http\Controllers\DonemController;
-use App\Http\Controllers\HocaController;
+use App\Http\Controllers\TeachController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProjeController;
 use App\Http\Controllers\TakipController;
-use App\Http\Controllers\UsersController;
+use App\Http\Controllers\KullaniciController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/new-admin',[UsersController::class,'newAdmin']);
+Route::get('/new-admin',[KullaniciController::class,'newAdmin']);
 
 Route::prefix('/')->middleware('isLogin')->group(function(){
     Route::get('/',function(){
@@ -29,7 +29,7 @@ Route::prefix('/')->middleware('isLogin')->group(function(){
     //Route::post('/login',)
 });
 
-Route::prefix('/takip')->middleware('authLogin')->group(function(){
+Route::prefix('/odev')->middleware('authLogin')->group(function(){
 
     Route::get('/',[HomeController::class,'index']);
     Route::get('/logout',[LoginController::class,'logout']);
@@ -37,11 +37,11 @@ Route::prefix('/takip')->middleware('authLogin')->group(function(){
     Route::post('/user-data',[HomeController::class,'userData']);
 
     // users
-    Route::get('/users',[UsersController::class,'index']);
-    Route::post('/user-data',[UsersController::class,'data']);
-    Route::post('/online-user-data',[UsersController::class,'online_user']);
-    Route::post('/user-add',[UsersController::class,'store']);
-    Route::post('/user-delete/{id}',[UsersController::class,'delete']);
+    Route::get('/users',[KullaniciController::class,'index']);
+    Route::post('/user-data',[KullaniciController::class,'data']);
+    Route::post('/online-user-data',[KullaniciController::class,'online_user']);
+    Route::post('/user-add',[KullaniciController::class,'store']);
+    Route::post('/user-delete/{id}',[KullaniciController::class,'delete']);
 
     // Dönem
     Route::get('/donem',[DonemController::class,'index']);
@@ -49,7 +49,7 @@ Route::prefix('/takip')->middleware('authLogin')->group(function(){
     Route::post('/donem-add',[DonemController::class,'store']);
     Route::post('/donem-delete/{id}',[DonemController::class,'delete']);
     Route::post('/donem-active/{id}',[DonemController::class,'active']);
-    Route::post('/takip-start',[TakipController::class,'takip']);
+    Route::post('/odev-start',[TakipController::class,'takip']);
 
    // Ogrenci Odev
    Route::get('/proje',[ProjeController::class,'index']);
@@ -69,9 +69,9 @@ Route::prefix('/takip')->middleware('authLogin')->group(function(){
    Route::post('/proje-tez-add',[ProjeController::class,'tezAsamasi']);
 
    // Hoca Odev
-   Route::get('/ogrenciler',[HocaController::class,'index']);
-   Route::post('/ogrenciler-data',[HocaController::class,'data']);
-   Route::post('/proje-add-2',[HocaController::class,'store']);
-   Route::post('/proje-delete/{id}',[HocaController::class,'delete']);
+   Route::get('/ogrenciler',[TeachController::class,'index']);
+   Route::post('/ogrenciler-data',[TeachController::class,'data']);
+   Route::post('/proje-add-2',[TeachController::class,'store']);
+   Route::post('/proje-delete/{id}',[TeachController::class,'delete']);
     
 });

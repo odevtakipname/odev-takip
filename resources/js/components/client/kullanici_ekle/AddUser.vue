@@ -193,7 +193,7 @@ export default {
         },
 
         load() {
-            axios.post("/takip/user-data").then((response) => {
+            axios.post("/odev/user-data").then((response) => {
                 this.forms = response.data;
                 this.o_forms = response.data;
             });
@@ -208,7 +208,7 @@ export default {
         },
         removeT(id) {
             axios
-                .post("/takip/user-delete/" + id)
+                .post("/odev/user-delete/" + id)
                 .then((response) => {
                     this.messageAlert("Başarılı", "İşlem Başarılı", 'success');
                     this.load();
@@ -241,7 +241,7 @@ export default {
                 );
             }
             axios
-                .post("/takip/user-add", formData)
+                .post("/odev/user-add", formData)
                 .then((response) => {
                     this.messageAlert("Başarılı", "İşlem Başarılı", 'success');
                     this.add = false;

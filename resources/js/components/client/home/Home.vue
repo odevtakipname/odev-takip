@@ -214,14 +214,14 @@ export default {
             this.$vToastify.success(setting);
         },
         load() {
-            axios.post("/takip/online-user-data").then((response) => {
+            axios.post("/odev/online-user-data").then((response) => {
                 this.user = response.data.user;
                 this.project = response.data.project;
                 this.danisman = response.data.danisman;
             });
         },
         getUsers() {
-            axios.post("/takip/user-data").then((response) => {
+            axios.post("/odev/user-data").then((response) => {
                 this.users = response.data;
             });
         },
@@ -234,7 +234,7 @@ export default {
                 return;
             }
             axios
-                .post("/takip/takip-start/")
+                .post("/odev/odev-start/")
                 .then((response) => {
                     this.messageAlert2(
                         "Başarılı",

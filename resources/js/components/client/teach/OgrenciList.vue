@@ -423,7 +423,7 @@ export default {
                 return;
             }
             axios
-                .post("/takip/proje-revize/", {
+                .post("/odev/proje-revize/", {
                     id: this.project.id,
                     red_nedeni: this.red_nedeni,
                 })
@@ -442,7 +442,7 @@ export default {
                 return;
             }
             axios
-                .post("/takip/proje-rapor-red/", {
+                .post("/odev/proje-rapor-red/", {
                     id: this.project.id,
                     red_nedeni: this.red_nedeni,
                 })
@@ -461,7 +461,7 @@ export default {
                 return;
             }
             axios
-                .post("/takip/proje-tez-red/", {
+                .post("/odev/proje-tez-red/", {
                     id: this.project.id,
                     red_nedeni: this.red_nedeni,
                 })
@@ -480,7 +480,7 @@ export default {
                 return;
             }
             axios
-                .post("/takip/proje-onay/", { id: this.project.id })
+                .post("/odev/proje-onay/", { id: this.project.id })
                 .then((response) => {
                     this.messageAlert("Başarılı", "İşlem Başarılı", "success");
                     this.load();
@@ -496,7 +496,7 @@ export default {
                 return;
             }
             axios
-                .post("/takip/proje-onay-rapor/", { id: this.project.id })
+                .post("/odev/proje-onay-rapor/", { id: this.project.id })
                 .then((response) => {
                     this.messageAlert("Başarılı", "İşlem Başarılı", "success");
                     this.load();
@@ -512,7 +512,7 @@ export default {
                 return;
             }
             axios
-                .post("/takip/proje-onay-tez/", { id: this.project.id })
+                .post("/odev/proje-onay-tez/", { id: this.project.id })
                 .then((response) => {
                     this.messageAlert("Başarılı", "İşlem Başarılı", "success");
                     this.load();
@@ -524,7 +524,7 @@ export default {
         },
 
         load() {
-            axios.post("/takip/ogrenciler-data").then((response) => {
+            axios.post("/odev/ogrenciler-data").then((response) => {
                 this.forms = response.data;
                 this.o_forms = response.data;
             });
@@ -535,7 +535,7 @@ export default {
 
         edit_rapor(index) {
             axios
-                .post("/takip/proje-seen-rapor/" + this.project.id)
+                .post("/odev/proje-seen-rapor/" + this.project.id)
                 .then((response) => {
                     this.load();
                     this.project = this.form.get_projects[index];
@@ -547,7 +547,7 @@ export default {
         edit_tez(index) {
       
             axios
-                .post("/takip/proje-seen-tez/" + this.project.id)
+                .post("/odev/proje-seen-tez/" + this.project.id)
                 .then((response) => {
                     this.load();
                     this.project = this.form.get_projects[index];
@@ -559,7 +559,7 @@ export default {
         edit_projects(index) {
 
             axios
-                .post("/takip/proje-seen/" + this.project.id)
+                .post("/odev/proje-seen/" + this.project.id)
                 .then((response) => {
                     this.load();
                     this.project = this.form.get_projects[index];
@@ -570,7 +570,7 @@ export default {
         },
         removeT(id) {
             axios
-                .post("/takip/user-delete/" + id)
+                .post("/odev/user-delete/" + id)
                 .then((response) => {
                     this.messageAlert("Başarılı", "İşlem Başarılı", "success");
                     this.load();
@@ -603,7 +603,7 @@ export default {
                 );
             }
             axios
-                .post("/takip/user-add", formData)
+                .post("/odev/user-add", formData)
                 .then((response) => {
                     this.messageAlert("Başarılı", "İşlem Başarılı", "success");
                     this.load();

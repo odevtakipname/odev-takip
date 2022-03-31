@@ -10,7 +10,7 @@ class LoginController extends Controller
 {
     public function login(Request $request){
         if (Auth::attempt(['eposta'=>$request->email,'password'=>$request->password])) {
-            return redirect('takip/');
+            return redirect('odev/');
         }
         return redirect('/')->withErrors('Email ve şifreniz hatalı düzeltip tekrar deneyiniz !');
     }

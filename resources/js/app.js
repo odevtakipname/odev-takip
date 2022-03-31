@@ -31,8 +31,8 @@ Vue.component('sidebar-comp',require('./components/client/layouts/Sidebar.vue').
 Vue.component('add-user',require('./components/client/kullanici_ekle/AddUser.vue').default)
 Vue.component('donem',require('./components/client/donem/donem.vue').default)
 Vue.component('ogrenci-odev',require('./components/client/ogrenci_odev/OgrenciOdev.vue').default)
-Vue.component('hoca-odev-list',require('./components/client/hoca_odev_list/HocaOdevList.vue').default)
-Vue.component('ogrenci-list',require('./components/client/hoca_odev_list/OgrenciList.vue').default)
+Vue.component('hoca-odev-list',require('./components/client/teach/HocaOdevList.vue').default)
+Vue.component('ogrenci-list',require('./components/client/teach/OgrenciList.vue').default)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

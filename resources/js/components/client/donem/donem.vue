@@ -155,7 +155,7 @@ export default {
         },
 
         load() {
-            axios.post("/takip/donem-data").then((response) => {
+            axios.post("/odev/donem-data").then((response) => {
                 this.forms = response.data;
                 this.o_forms = response.data;
             });
@@ -170,7 +170,7 @@ export default {
         },
         removeT(id) {
             axios
-                .post("/takip/donem-delete/" + id)
+                .post("/odev/donem-delete/" + id)
                 .then((response) => {
                     this.messageAlert("Başarılı", "İşlem Başarılı", "success");
                     this.load();
@@ -186,7 +186,7 @@ export default {
                 return;
             }
             axios
-                .post("/takip/donem-active/" + id)
+                .post("/odev/donem-active/" + id)
                 .then((response) => {
                     this.messageAlert("Başarılı", "İşlem Başarılı", "success");
                     this.load();
@@ -207,7 +207,7 @@ export default {
             }
 
             axios
-                .post("/takip/donem-add", formData)
+                .post("/odev/donem-add", formData)
                 .then((response) => {
                     this.messageAlert("Başarılı", "İşlem Başarılı", 'success');
                     this.add= false;

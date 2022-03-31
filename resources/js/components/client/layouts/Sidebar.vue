@@ -44,7 +44,7 @@
                                 </div>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a href="/takip/logout" class="dropdown-item ai-icon">
+                                <a href="/odev/logout" class="dropdown-item ai-icon">
                                     <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
                                         <polyline points="16 17 21 12 16 7"></polyline>
@@ -76,19 +76,19 @@
                     </a>
                 </li>
                 <li>
-                    <a class="ai-icon" href="/takip/users" aria-expanded="false">
+                    <a class="ai-icon" href="/odev/users" aria-expanded="false">
                         <i class="flaticon-381-networking"></i>
                         <span class="nav-text text-uppercase">Kullanıcılar</span>
                     </a>
                 </li>
                 <li>
-                    <a class="ai-icon" href="/takip/donem" aria-expanded="false">
+                    <a class="ai-icon" href="/odev/donem" aria-expanded="false">
                         <i class="flaticon-381-networking"></i>
                         <span class="nav-text text-uppercase">Dönem Kayıt İşlemleri</span>
                     </a>
                 </li>
                 <li>
-                    <a class="ai-icon" href="/takip/ogrenciler" aria-expanded="false">
+                    <a class="ai-icon" href="/odev/ogrenciler" aria-expanded="false">
                         <i class="flaticon-381-networking"></i>
                         <span class="nav-text text-uppercase">Öğrenci Ödev Takibi</span>
                     </a>
@@ -102,7 +102,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="ai-icon" href="/takip/proje" aria-expanded="false">
+                    <a class="ai-icon" href="/odev/proje" aria-expanded="false">
                         <i class="flaticon-381-networking"></i>
                         <span class="nav-text text-uppercase">Öğrenci Ödev Takibi</span>
                     </a>
@@ -116,7 +116,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="ai-icon" href="/takip/ogrenciler" aria-expanded="false">
+                    <a class="ai-icon" href="/odev/ogrenciler" aria-expanded="false">
                         <i class="flaticon-381-networking"></i>
                         <span class="nav-text text-uppercase">Öğrenciler ve Ödev Takibi</span>
                     </a>
@@ -154,7 +154,7 @@ export default {
     },
     methods: {
         load() {
-            axios.post("/takip/online-user-data").then((response) => {
+            axios.post("/odev/online-user-data").then((response) => {
                 this.user = response.data.user;
             });
         },
