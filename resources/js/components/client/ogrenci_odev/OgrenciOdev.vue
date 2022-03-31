@@ -129,7 +129,7 @@
                     </h4>
                 </div>
                 <div class="card-body">
-                    <form action="" class="d-flex" @submit.prevent="onSubmit()">
+                    <form action="POST" class="d-flex" @submit.prevent="onSubmit()">
                         <div class="col-md-6">
                             <div class="col-md-12">
                                 <div class="form-group">

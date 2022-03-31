@@ -115,7 +115,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr v-for="(proje,index) in projects" :key="proje.id">
                             <td style="width: 80px !important">
                                 <a class="btn btn-primary shadow btn-xs sharp mr-1">
                                     <i class="fa fa-file" style="cursor: pointer" @click="edit(index)" title="Detayları Görmek için tıklayınız"></i></a>
@@ -128,15 +128,15 @@
                                 <a class="btn btn-primary shadow btn-xs sharp mr-1">
                                     <i class="fa fa-file" style="cursor: pointer" @click="edit3(index)" title="Detayları Görmek için tıklayınız"></i></a>
                             </td>
-                            <td>{{ project.baslik }}</td>
+                            <td>{{ proje.baslik }}</td>
                             <td class="d-flex flex-wrap">
-                                <span class="badge badge-m light badge-primary">{{ project.anahtar_kelime }}</span>
+                                <span class="badge badge-m light badge-primary">{{ proje.anahtar_kelime }}</span>
                             </td>
-                            <td>{{ project.durum }}</td>
+                            <td>{{ proje.durum }}</td>
                             <td>
                                 {{
-                                        project.seen
-                                            ? project.seen
+                                        proje.seen
+                                            ? proje.seen
                                             : "Görülmedi"
                                     }}
                             </td>
@@ -157,7 +157,7 @@
                 </h4>
             </div>
             <div class="card-body">
-                <form action="" class="d-flex" @submit.prevent="onSubmit()">
+                <form action="POST" class="d-flex" @submit.prevent="onSubmit()">
                     <div class="col-md-8" style="overflow-y: scroll; max-height: 600px">
                         <div class="col-md-12">
                             <div class="form-group">
@@ -224,7 +224,7 @@
                 <h4 class="card-title">Rapor Aşaması</h4>
             </div>
             <div class="card-body">
-                <form action="" class="d-flex fex-wrap" @submit.prevent="onSubmit()">
+                <form action="POST" class="d-flex fex-wrap" @submit.prevent="onSubmit()">
                     <div class="col-md-6 pt-5 pb-5" v-if="project.rapor_pdf">
                         <div class="col-md-12">
                             <a :href="'/public/files/' + project.rapor_word" class="alert alert-success alert-dismissible" role="alert" download="">
@@ -275,7 +275,7 @@
                 <h4 class="card-title">Tez Aşaması</h4>
             </div>
             <div class="card-body">
-                <form action="" class="d-flex fex-wrap" @submit.prevent="onSubmit()">
+                <form action="POST" class="d-flex fex-wrap" @submit.prevent="onSubmit()">
                     <div class="col-md-6 pt-5 pb-5" v-if="project.tez_pdf">
                         <div class="col-md-12">
                             <a :href="'/public/files/' + project.tez_word" class="alert alert-success alert-dismissible" role="alert" download="">
@@ -331,7 +331,6 @@ import { required, email } from "vuelidate/lib/validators";
 export default {
     data() {
         return {
-            ad: "efe",
             forms: [],
             o_forms: [],
             search: "",
@@ -406,7 +405,9 @@ export default {
             }
         },
         seenUser(index) {
-            this.project = this.forms[index].get_projects[0];
+            this.project = this.forms[index].get_projects[this.forms[index].get_projects.length-1];
+
+            this.projects = (this.forms[index].get_projects).reverse();
             if (this.project_user) {
                 this.project_user = false;
             } else {

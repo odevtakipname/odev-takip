@@ -80,7 +80,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action=""  @submit.prevent="onSubmit()">
+                    <form action="POST"  @submit.prevent="onSubmit()">
                         <div class="col-md-12">
                             <div class="col-md-4">
                                 <div class="form-group">
