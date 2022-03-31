@@ -50,7 +50,7 @@
                                                 }}</strong></a>
                                     </td>
                                     <td>
-                                        <a href="javascript:void(0);" v-if="item.opened"><strong @click="makeOpened(item.id)"> <a href="#" class="btn btn-success shadow btn-xs sharp">On</a></strong></a>
+                                        <a href="javascript:void(0);" v-if="item.opened && (item.opened !=null  || item.opened !='')"><strong @click="makeOpened(item.id)"> <a href="#" class="btn btn-success shadow btn-xs sharp">On</a></strong></a>
                                         <a href="javascript:void(0);" v-else><strong @click="makeOpened(item.id)"> <a href="#" class="btn btn-danger shadow btn-xs sharp" style="background: red">Of</a></strong></a>
                                     </td>
                                     <td>
